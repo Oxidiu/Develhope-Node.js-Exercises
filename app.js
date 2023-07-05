@@ -1,2 +1,3 @@
-const addNumbers = require('./mathUtils');
-console.log(addNumbers(2, 3)); // Output: 5
+import addNumbers from './mathUtils.mjs'
+
+addNumbers(1, 2) // expected console output: 3
