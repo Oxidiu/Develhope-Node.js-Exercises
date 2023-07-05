@@ -10,7 +10,29 @@ function luckyDraw(player) {
         }
       });
     });
-  }
-  luckyDraw("Oxide")
-    .then((result) => console.log(result))
-    .catch((err) => console.error(err));
+}
+
+const getResults = async () => {
+    try {
+        const result1 = await luckyDraw("Tina")
+        console.log(result1)
+    } catch (error) {
+        console.error(error)
+    }
+
+    try {
+        const result2 = await luckyDraw("Jorge")
+        console.log(result2)
+    } catch (error) {
+        console.error(error)
+    }
+
+    try {
+        const result3 = await luckyDraw("Julien")
+        console.log(result3)
+    } catch (error) {
+        console.error(error)
+    }
+}
+
+getResults()
