@@ -1,7 +1,16 @@
-const fs = require('fs');
+function luckyDraw(player) {
+    return new Promise((resolve, reject) => {
+      const win = Boolean(Math.round(Math.random()));
 
-fs.writeFile('message.txt', 'Text written with fs.writeFile by OXiDE', (err) => {
-    if (err) throw err;
-
-    console.log("The file has been written successfuly!")
-})
+      process.nextTick(() => {
+        if (win) {
+          resolve(`${player} won a prize in the draw!`);
+        } else {
+          reject(new Error(`${player} lost the draw.`));
+        }
+      });
+    });
+  }
+  luckyDraw("Oxide")
+    .then((result) => console.log(result))
+    .catch((err) => console.error(err));
